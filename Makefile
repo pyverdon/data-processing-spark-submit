@@ -32,7 +32,7 @@ init:
 # go install is only for main package
 	go get golang.org/x/tools/internal/imports@v0.1.12
 	go get golang.org/x/tools/internal/gocommand@v0.1.12
-	go get golang.org/x/tools/cmd/goimports
+	go install golang.org/x/tools/cmd/goimports@latest
 
 .PHONY: cleanmake
 clean:
