@@ -52,15 +52,15 @@ lint:
 
 .PHONY: test
 test:
-	$(GOPATH)/bin/ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --progress --compilers=2
+	ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --progress --compilers=2
 
 .PHONY: testrun
 testrun:
-	$(GOPATH)/bin/ginkgo watch -r ./
+	ginkgo watch -r ./
 
 .PHONY: cover
 cover:
-	$(GOPATH)/bin/gover . coverage.txt
+	gover . coverage.txt
 
 
 .PHONY: dev
