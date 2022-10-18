@@ -25,7 +25,7 @@ all: init format lint test release
 .PHONY: init
 init:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-	go get github.com/onsi/ginkgo/v2/ginkgo
+	go install github.com/onsi/ginkgo/v2/ginkgo@latest
 	go get golang.org/x/tools/cmd/cover
 	go get github.com/modocache/gover
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.0
@@ -55,7 +55,7 @@ test:
 	pwd
 	ls
 	ls bin
-	ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --progress --compilers=2
+	ginkgo -r --randomize-all --randomize-suites --fail-on-pending --cover --trace --progress --compilers=2
 
 .PHONY: testrun
 testrun:
