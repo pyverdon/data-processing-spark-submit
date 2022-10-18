@@ -29,8 +29,6 @@ init:
 	go get golang.org/x/tools/cmd/cover
 	go get github.com/modocache/gover
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.0
-#	go get golang.org/x/tools/internal/imports@v0.1.12
-#	go get golang.org/x/tools/internal/gocommand@v0.1.12
 	go install golang.org/x/tools/cmd/goimports@latest
 
 .PHONY: cleanmake
