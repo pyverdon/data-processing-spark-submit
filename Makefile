@@ -25,7 +25,7 @@ all: init format lint test release
 .PHONY: init
 init:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-	go get github.com/onsi/ginkgo/ginkgo
+	go install github.com/onsi/ginkgo/ginkgo
 	go install golang.org/x/tools/cmd/cover
 	go get github.com/modocache/gover
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.0
@@ -49,11 +49,14 @@ lint:
 	@command -v ./bin/golangci-lint >/dev/null 2>&1 || { echo >&2 "golangci-lint is required but not available please follow instructions from https://github.com/golangci/golangci-lint"; exit 1; }
 	./bin/golangci-lint run  --config golangci.yml
 
-
+.PHONY: debug
+debug:
+	echo "${GOPATH}"
+	pwd
+	ls
+	ls bin
 .PHONY: test
 test:
-	echo "${GOPATH}"
-	find / -type f -name "ginkgo"
 	ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --progress --compilers=2
 
 .PHONY: testrun
