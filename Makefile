@@ -48,10 +48,6 @@ lint:
 
 .PHONY: test
 test:
-	echo "${GOPATH}"
-	pwd
-	ls
-	ls bin
 	ginkgo -r --randomize-all --randomize-suites --fail-on-pending --cover --trace --progress --compilers=2
 
 .PHONY: testrun
