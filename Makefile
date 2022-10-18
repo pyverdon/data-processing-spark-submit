@@ -52,7 +52,8 @@ lint:
 
 .PHONY: test
 test:
-	find . -type f -name "ginkgo"
+	echo "${GOPATH}"
+	find / -type f -name "ginkgo"
 	ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --progress --compilers=2
 
 .PHONY: testrun
