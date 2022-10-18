@@ -25,7 +25,7 @@ all: init format lint test release
 .PHONY: init
 init:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-	@GO111MODULE=on CGO_ENABLED=0 go get github.com/onsi/ginkgo@latest
+	go install github.com/onsi/ginkgo/v2/ginkgo
 	go install golang.org/x/tools/cmd/cover
 	go get github.com/modocache/gover
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.0
