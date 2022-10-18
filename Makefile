@@ -25,14 +25,14 @@ all: init format lint test release
 .PHONY: init
 init:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-	go install github.com/onsi/ginkgo/v2/ginkgo
-	go install golang.org/x/tools/cmd/cover
-	go get github.com/modocache/gover
+	go get -u github.com/onsi/ginkgo/v2/ginkgo
+	go get -u golang.org/x/tools/cmd/cover
+	go get -u github.com/modocache/gover
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.0
 # go install is only for main package
 	go get -u golang.org/x/tools/internal/imports@v0.1.12
 	go get -u golang.org/x/tools/internal/gocommand@v0.1.12
-	go install golang.org/x/tools/cmd/goimports
+	go get -u golang.org/x/tools/cmd/goimports
 
 .PHONY: cleanmake
 clean:
