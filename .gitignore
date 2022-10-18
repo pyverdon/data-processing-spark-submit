@@ -303,3 +303,4 @@ data-processing-spark-submit
 
 ### cover ###
 *.coverprofile
+coverprofile.out
